@@ -9,7 +9,7 @@ on:
       - 'image/**'
 
 env:
-  DOCKER_IMAGE: boilerplate:latest
+  DOCKER_IMAGE: linter:latest
 
 jobs:
   publish:
