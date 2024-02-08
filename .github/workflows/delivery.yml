@@ -8,9 +8,6 @@ on:
     paths:
       - 'image/**'
 
-env:
-  DOCKER_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/linter:latest
-
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -26,7 +23,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./Dockerfile
+          context: image/
           push: true
-          tags: $DOCKER_IMAGE
+          tags: alvarofpp/linter:latest
