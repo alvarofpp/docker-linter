@@ -13,4 +13,5 @@ if [[ -z "${FILES}" ]]; then
   exit 0
 fi
 
-echo "${FILES}" | xargs markdownlint -c "${LINT_CONFIG_PATH}"/.markdownlintrc
+LINT_FILE_PATH=$(get-linter-file-path .markdownlintrc)
+echo "${FILES}" | xargs markdownlint -c "${LINT_FILE_PATH}"

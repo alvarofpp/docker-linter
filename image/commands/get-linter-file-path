@@ -1,0 +1,19 @@
+#!/bin/bash
+if [[ "${DEBUG}" == "true" ]]; then
+  set -x
+fi
+
+if [ -z "$1" ]; then
+  echo "File name not supplied."
+  exit 1
+fi
+
+FILE_NAME="$1"
+LINT_FILE_PATH="${LINT_CONFIG_PATH}/${FILE_NAME}"
+LINT_CUSTOM_FILE_PATH="${LINT_CUSTOM_CONFIG_PATH}/${FILE_NAME}"
+
+if [ -f "${LINT_CUSTOM_FILE_PATH}" ]; then
+  LINT_FILE_PATH="${LINT_CUSTOM_FILE_PATH}"
+fi
+
+echo "${LINT_FILE_PATH}"

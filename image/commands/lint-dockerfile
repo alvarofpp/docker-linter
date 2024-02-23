@@ -13,4 +13,5 @@ if [[ -z "${FILES}" ]]; then
   exit 0
 fi
 
-echo "${FILES}" | xargs hadolint --config "${LINT_CONFIG_PATH}"/.hadolint.yaml
+LINT_FILE_PATH=$(get-linter-file-path .hadolint.yaml)
+echo "${FILES}" | xargs hadolint --config "${LINT_FILE_PATH}"

@@ -7,7 +7,7 @@ ENV WORKDIR=/app
 ENV LINT_CUSTOM_CONFIG_PATH="${WORKDIR}/.lint"
 
 # Install packages
-RUN apk --no-cache add findutils  \
+RUN apk --no-cache add findutils \
     file \
     curl \
     bash-completion \

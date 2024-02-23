@@ -13,4 +13,5 @@ if [[ -z "${FILES}" ]]; then
   exit 0
 fi
 
-echo "${FILES}" | xargs yamllint -s -c "${LINT_CONFIG_PATH}"/.yamllint
+LINT_FILE_PATH=$(get-linter-file-path .yamllint)
+echo "${FILES}" | xargs yamllint -s -c "${LINT_FILE_PATH}"
