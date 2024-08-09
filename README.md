@@ -10,14 +10,14 @@ docker pull alvarofpp/linter:latest
 
 Linters in this image and which command to invoke it:
 
-| Linter                          | Command                       | Config file       |
-|---------------------------------|-------------------------------|-------------------|
-| [Commit (git)][linter-commit]   | `lint-commit <target_branch>` | `.commitlintrc`   |
-| [Dockerfile][linter-dockerfile] | `lint-dockerfile`             | `.hadolint.yaml`  |
-| [Markdown][linter-markdown]     | `lint-markdown`               | `.markdownlintrc` |
-| [Python][linter-python]         | `lint-python`                 | `.ruff.toml`      |
-| [Shell script][linter-shell]    | `lint-shell-script`           | `.shellcheckrc`   |
-| [YAML][linter-yaml]             | `lint-yaml`                   | `.yamllint`       |
+| Linter                          | Command                          | Config file       |
+|---------------------------------|----------------------------------|-------------------|
+| [Commit (git)][linter-commit]   | `lint-commit <target_branch>`    | `.commitlintrc`   |
+| [Dockerfile][linter-dockerfile] | `lint-dockerfile`                | `.hadolint.yaml`  |
+| [Markdown][linter-markdown]     | `lint-markdown`                  | `.markdownlintrc` |
+| [Python][linter-python]         | `lint-python`, `lint-python-fix` | `.ruff.toml`      |
+| [Shell script][linter-shell]    | `lint-shell-script`              | `.shellcheckrc`   |
+| [YAML][linter-yaml]             | `lint-yaml`                      | `.yamllint`       |
 
 You can create a `.lint/` directory with your linters configs,
 exceptionally the `.shellcheckrc` file must be in the main directory.
